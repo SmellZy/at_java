@@ -58,7 +58,7 @@ public class DemoBlazeBO {
         return this;
     }
 
-    public void verifyOrder() throws InterruptedException {
+    public DemoBlazeBO verifyOrder() throws InterruptedException {
         name = randomString();
         country = randomString();
         city  = randomString();
@@ -76,5 +76,11 @@ public class DemoBlazeBO {
                 .inputCard(creditCard)
                 .inputMonth(month)
                 .inputYear(year).submitOrder().verifiedOrderWindow();
+        return this;
+    }
+
+    public DemoBlazeBO fail() {
+        Assert.fail();
+        return this;
     }
 }

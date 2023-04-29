@@ -12,9 +12,8 @@ public class WebDriverSupplier {
 
 
     public static void closeDriver() {
-        driver.quit();
         driver.close();
-
+        driver.quit();
     }
 
     public static void setupDriver() {
