@@ -1,4 +1,4 @@
-package itstep.Task_11;
+package itstep.Task_11.po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package itstep.Task_11;
+package itstep.Task_11.po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,20 +9,28 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class HomePage {
+public class LoginPage {
     private WebDriver driver;
-    public static final String URL = "https://www.demoblaze.com";
-    public HomePage(WebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver = driver;
-        if (!URL.equals(driver.getCurrentUrl())){
-            driver.get(URL);
-        }
     }
 
-    public SingUpPage singUp() throws InterruptedException {
+    public LoginPage inputLogin(String login) throws InterruptedException {
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"signin2\"]")).click();
-        return new SingUpPage(driver);
+        driver.findElement(By.xpath("//*[@id=\"loginusername\"]")).sendKeys(login);
+        return this;
+    }
+
+    public LoginPage inputPassword(String password) throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginpassword\"]")).sendKeys(password);
+        return this;
+    }
+
+    public LoginPage login() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
+        return this;
     }
 
     public LoginPage goToLoginPage() throws InterruptedException {
@@ -35,11 +43,8 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
-    public ProductPage goToProduct() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/div[5]/div/a/img")).click();
-
+    public void isLoggedIn() throws InterruptedException {
         Thread.sleep(3000);
-        return new ProductPage(driver);
+        driver.findElement(By.xpath("//*[@id=\"nameofuser\"]")).isDisplayed();
     }
 }
