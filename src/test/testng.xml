@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Task 8">
+    <test name="Task 8 test">
+        <packages>
+            <package name="itstep_test.*"/>
+        </packages>
+    </test>
+
+    <parameter name="a" value="42" />
+    <parameter name="b" value="42" />
+    <test name="Task 8 with param">
+        <classes>
+            <class name="itstep_test.task_8.ParametrizedTask8_tests">
+                <methods>
+                    <include name="testIntToString" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

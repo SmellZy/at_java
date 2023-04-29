@@ -1,16 +1,19 @@
 package itstep.task_2;
 
 public class Primitives {
-    public static void main(String[] args) {
-        // Declare and initialize an int variable
-        int num = 42;
+    public static String intToString(int num) {
+        return Integer.toString(num);
+    }
 
-        // Use Integer wrapper class to convert int to String
-        String str = Integer.toString(num);
-        System.out.println("String representation of num: " + str);
+    public static int stringToInt(String str) {
+        return Integer.parseInt(str);
+    }
 
-        // Use Integer wrapper class to convert String to int
-        int num2 = Integer.parseInt(str);
-        System.out.println("Value of num2: " + num2);
+    public static double intToDouble(int num) {
+        return (double)num;
+    }
+
+    public static int doubleToInt(double num) {
+        return (int)num;
     }
 }
