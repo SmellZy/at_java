@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "d7b06598-2d86-434c-b6ba-cc1da3de02b4",
+		"name": "at_JAVA_Lab15",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Organization with some random name",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the board from organization",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create new board in my organization",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update a background color of the board",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "orgName",
+			"value": ""
+		},
+		{
+			"key": "boardName",
+			"value": ""
+		}
+	]
+}
