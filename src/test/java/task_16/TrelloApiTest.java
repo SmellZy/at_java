@@ -108,9 +108,6 @@ public class TrelloApiTest {
             System.out.println("ID: " + orgId);
 
 
-
-
-
         String requestBodyNewBoard = "?displayName="+newBoardName+"&key="+trelloKey+"&token="+trelloToken;
         HttpRequest createNewBoardRequest;
         createNewBoardRequest = HttpRequest.newBuilder()
