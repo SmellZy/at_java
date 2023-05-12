@@ -20,7 +20,6 @@ public class HibernateMain {
 
         session.beginTransaction();
         printAllUsers();
-
         //-- Insert a new user into the Mantis user table
         //INSERT INTO mantis_user_table (username, realname, email, password, enabled, protected, access_level, cookie_string)
         //VALUES ('john.doe', 'John Doe', 'john.doe@example.com', MD5('password123'), 1, 0, 35, UUID());
@@ -69,6 +68,8 @@ public class HibernateMain {
 
         Query query = session.createQuery("FROM "+MantisUser.class.getName());
         List<MantisUser> results = query.list();
+        results.forEach(mu -> {System.out.println(mu.getUsername() +"\troot\t"+mu.getAccessLevel());
+        });
         System.out.println("results "+results);
     }
 
