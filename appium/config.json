@@ -1,0 +1,7 @@
+{
+  "appium:platformName": "android",
+  "appium:automationName": "uiautomator2",
+  "appium:platformVersion": "12",
+  "appium:deviceName": "at",
+  "appium:app": "/Users/dima/Development/AT_Java/appium/Calc.apk"
+}
