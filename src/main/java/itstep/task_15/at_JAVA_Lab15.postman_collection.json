@@ -7,33 +7,230 @@
 	"item": [
 		{
 			"name": "Create Organization with some random name",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"orgName\", Math.random().toString(36).substr(2,10));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"orgId\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/organizations?displayName={{orgName}}&key=1b8ea1bc41da47da1d260b2993d6e8f7&token=ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"organizations"
+					],
+					"query": [
+						{
+							"key": "displayName",
+							"value": "{{orgName}}"
+						},
+						{
+							"key": "key",
+							"value": "1b8ea1bc41da47da1d260b2993d6e8f7"
+						},
+						{
+							"key": "token",
+							"value": "ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Delete the board from organization",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/{{boardId}}?key=1b8ea1bc41da47da1d260b2993d6e8f7&token=ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{boardId}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "1b8ea1bc41da47da1d260b2993d6e8f7"
+						},
+						{
+							"key": "token",
+							"value": "ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Create new board in my organization",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"boardName\", Math.random().toString(36).substr(2,10));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"boardId\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/?name={{boardName}}&key=1b8ea1bc41da47da1d260b2993d6e8f7&token=ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50&idOrganization={{orgId}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{boardName}}"
+						},
+						{
+							"key": "key",
+							"value": "1b8ea1bc41da47da1d260b2993d6e8f7"
+						},
+						{
+							"key": "token",
+							"value": "ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50"
+						},
+						{
+							"key": "idOrganization",
+							"value": "{{orgId}}"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Update a background color of the board",
 			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/{{boardId}}?key=1b8ea1bc41da47da1d260b2993d6e8f7&token=ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50&prefs/background=grey",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{boardId}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "1b8ea1bc41da47da1d260b2993d6e8f7"
+						},
+						{
+							"key": "token",
+							"value": "ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50"
+						},
+						{
+							"key": "prefs/background",
+							"value": "grey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/members/6043af6fe2fd2c24633fe0a8/organizations?key=1b8ea1bc41da47da1d260b2993d6e8f7&token=ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50&fields=id\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"members",
+						"6043af6fe2fd2c24633fe0a8",
+						"organizations"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "1b8ea1bc41da47da1d260b2993d6e8f7"
+						},
+						{
+							"key": "token",
+							"value": "ATTAb0e40741f63a3d90ada82868865cebd6ac46e8c003201f8d144d225bc229120353D8EF50"
+						},
+						{
+							"key": "fields",
+							"value": "id\n"
+						}
+					]
+				}
 			},
 			"response": []
 		}
