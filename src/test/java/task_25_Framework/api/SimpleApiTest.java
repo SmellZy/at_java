@@ -1,7 +1,6 @@
 package task_25_Framework.api;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.Assert;
@@ -11,7 +10,6 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.http.HttpClient;
@@ -21,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.UUID;
 
-public class ApiTest {
+public class SimpleApiTest {
     Properties properties = new Properties();
     String trelloKey;
     String trelloToken;
@@ -177,7 +175,6 @@ public class ApiTest {
                 .POST(HttpRequest.BodyPublishers.ofString("", StandardCharsets.UTF_8)).build();
         HttpResponse<String> labelResponse = httpClient.send(createLabelRequest, HttpResponse.BodyHandlers.ofString());
         JsonNode jsonNodeLabel = mapper.readTree(labelResponse.body());
-        System.out.println(labelResponse.body());
         String labelId = jsonNodeBoard.get("id").asText();
         Assert.assertEquals(labelResponse.statusCode(), 200);
 
