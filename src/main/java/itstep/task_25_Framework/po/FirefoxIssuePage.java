@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -21,7 +22,7 @@ public class FirefoxIssuePage {
     private WebElement statusField;
 
     private WebDriver firefoxDriver;
-    public FirefoxIssuePage(WebDriver firefoxDriver) {this.firefoxDriver = firefoxDriver;}
+    public FirefoxIssuePage(WebDriver firefoxDriver) {PageFactory.initElements(this.firefoxDriver = firefoxDriver, this);}
 
     public FirefoxIssuePage addDetailsToIssue() {
         commentField.sendKeys("some comment");

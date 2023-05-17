@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
 
 public class FirefoxHomePage {
     @FindBy(xpath = "//*[@id=\"assigned\"]/div[2]/div/div/table/tbody/tr/td[2]/span[1]/a")
@@ -13,7 +14,7 @@ public class FirefoxHomePage {
 
     private WebDriver firefoxDriver;
 
-    public FirefoxHomePage(WebDriver firefoxDriver){this.firefoxDriver = firefoxDriver;}
+    public FirefoxHomePage(WebDriver firefoxDriver){PageFactory.initElements(this.firefoxDriver = firefoxDriver, this);}
 
 
     public FirefoxIssuePage goToIssuePage() {

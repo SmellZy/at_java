@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class ChromeSignInPage {
     @FindBy(xpath = "//*[@id=\"username\"]")
@@ -18,7 +19,8 @@ public class ChromeSignInPage {
 
     private WebDriver chromeDriver;
     public static final String URL = "http://localhost/login_page.php";
-    public ChromeSignInPage(WebDriver chromeDriver){this.chromeDriver = chromeDriver;  chromeDriver.get(URL);}
+    public ChromeSignInPage(WebDriver chromeDriver){
+        PageFactory.initElements(this.chromeDriver = chromeDriver, this);  chromeDriver.get(URL);}
 
 
     public ChromeSignInPage sendLogin(String login) {

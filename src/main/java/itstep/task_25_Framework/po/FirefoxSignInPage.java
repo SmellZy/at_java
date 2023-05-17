@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class FirefoxSignInPage {
 
     private WebDriver firefoxDriver;
     public static final String URL = "http://localhost/login_page.php";
-    public FirefoxSignInPage(WebDriver firefoxDriver){this.firefoxDriver = firefoxDriver;  firefoxDriver.get(URL);}
+    public FirefoxSignInPage(WebDriver firefoxDriver){PageFactory.initElements(this.firefoxDriver = firefoxDriver, this);  firefoxDriver.get(URL);}
 
 
     public FirefoxSignInPage sendLogin(String login) {

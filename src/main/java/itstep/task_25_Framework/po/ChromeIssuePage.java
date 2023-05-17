@@ -4,10 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import itstep.task_25_Framework.wrappers.*;
 
 import java.time.Duration;
+
+import static itstep.course_tasks.task_12.WebDriverSupplier.driver;
 
 public class ChromeIssuePage {
     @FindBy(xpath = "//*[@id=\"reproducibility\"]")
@@ -28,19 +32,17 @@ public class ChromeIssuePage {
 
 
     private WebDriver chromeDriver;
-    public ChromeIssuePage(WebDriver chromeDriver) {this.chromeDriver = chromeDriver;}
+    public ChromeIssuePage(WebDriver chromeDriver) {PageFactory.initElements(this.chromeDriver = chromeDriver, this);}
 
     public ChromeIssuePage addDetailsToIssue() {
         reproducibilityList.click();
         WebElement waitMenu = new WebDriverWait(chromeDriver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"reproducibility\"]/option[2]")));
-        waitMenu.click();
         //add відтворюваність: іноді
         reproducibilityOption.click();
         //кому призначити
         handler_list.click();
         //assign user: 1b3c530f-b
         WebElement chooseUser = new WebDriverWait(chromeDriver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"handler_id\"]/option[2]")));
-        waitMenu.click();
         handler_user.click();
         //some statistic
         statistic.sendKeys("some statistic");
