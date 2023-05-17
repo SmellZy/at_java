@@ -1,9 +1,7 @@
 package task_16;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import itstep.task_14.AllureListener;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
+import itstep.course_tasks.task_14.AllureListener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
@@ -15,7 +13,6 @@ import java.net.http.HttpRequest;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;

@@ -1,14 +1,8 @@
 package task_14;
 
-import com.automation.remarks.testng.UniversalVideoListener;
-import com.automation.remarks.video.annotations.Video;
-import itstep.task_12.WebDriverSupplier;
-import itstep.task_12.bo.DemoBlazeBO;
-import itstep.task_13.IExecutionListener;
-import itstep.task_13.IInvoke;
-import itstep.task_13.SuiteListener;
-import itstep.task_13.TestListener;
-import itstep.task_14.AllureListener;
+import itstep.course_tasks.task_12.WebDriverSupplier;
+import itstep.course_tasks.task_12.bo.DemoBlazeBO;
+import itstep.course_tasks.task_14.AllureListener;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;

@@ -1,10 +1,7 @@
 package task_12;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import itstep.task_12.bo.DemoBlazeBO;
-import itstep.task_12.WebDriverSupplier;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import itstep.course_tasks.task_12.bo.DemoBlazeBO;
+import itstep.course_tasks.task_12.WebDriverSupplier;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

@@ -1,7 +1,7 @@
 package task_17;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import itstep.task_14.AllureListener;
+import itstep.course_tasks.task_14.AllureListener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;

@@ -1,6 +1,6 @@
 package itstep_test.task_8;
 
-import itstep.task_2.Primitives;
+import itstep.course_tasks.task_2.Primitives;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

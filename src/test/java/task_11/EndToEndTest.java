@@ -1,10 +1,7 @@
 package task_11;
 
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import itstep.Task_11.bo.DemoBlazeBO;
-import itstep.Task_11.po.HomePage;
-import itstep.Task_11.po.ProductPage;
-import itstep.Task_11.po.SingUpPage;
+import itstep.course_tasks.Task_11.bo.DemoBlazeBO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
