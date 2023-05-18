@@ -66,7 +66,6 @@ public class ApiBO {
 
         CreateOrgResponse res = new CreateOrgResponse();
         res.setStatusCode(createOrgResponse.statusCode());
-        System.out.println(createOrgResponse.body());
         TrelloOrg createOrgBody = objectMapper.readValue(createOrgResponse.body()+"",TrelloOrg.class);
         res.setBody(createOrgBody);
         return res;
@@ -92,7 +91,6 @@ public class ApiBO {
 
         CreateBoardInOrgResponse res = new CreateBoardInOrgResponse();
         res.setStatusCode(createBoardInOrgResponse.statusCode());
-        System.out.println(createBoardInOrgResponse.body());
         TrelloBoardInOrg createBoardInOrgBody = objectMapper.readValue(createBoardInOrgResponse.body()+"", TrelloBoardInOrg.class);
         res.setBody(createBoardInOrgBody);
         return res;
@@ -116,7 +114,6 @@ public class ApiBO {
 
         ChangeColorInBoardResponse res = new ChangeColorInBoardResponse();
         res.setStatusCode(changeColorInBoardResponse.statusCode());
-        System.out.println(changeColorInBoardResponse.body());
         TrelloBoardColor changeColorInBoardBody = objectMapper.readValue(changeColorInBoardResponse.body()+"", TrelloBoardColor.class);
         res.setBody(changeColorInBoardBody);
         return res;
@@ -132,9 +129,6 @@ public class ApiBO {
                         + "?key=" + deleteBoardFromOrgRequest.getKey()
                         + "&token=" + deleteBoardFromOrgRequest.getToken()).toURI())
                 .DELETE().build();
-
-        HttpResponse deleteBoardFromOrgResponse = HttpClient.newBuilder().build().send(
-                httpRequest,HttpResponse.BodyHandlers.ofString());
     }
 
     // end-to-end 2 ch. ------------------------------------------------------------------------
@@ -143,7 +137,7 @@ public class ApiBO {
         HttpRequest httpRequest;
         httpRequest = HttpRequest.newBuilder()
                 .header("accept", "application/json")
-                .uri(new URL(BASE_TRELLO_URL + "/1/boards/"
+                .uri(new URL(BASE_TRELLO_URL + "/1/boards"
                         + "?name=" + createBoardRequest.getBoardName()
                         + "?key=" + createBoardRequest.getKey()
                         + "&token=" + createBoardRequest.getToken()).toURI())
@@ -177,7 +171,6 @@ public class ApiBO {
 
         CreateListInBoardResponse res = new CreateListInBoardResponse();
         res.setStatusCode(createListResponse.statusCode());
-        System.out.println(createListResponse.body());
         TrelloCreateList createListBody = objectMapper.readValue(createListResponse.body()+"", TrelloCreateList.class);
         res.setBody(createListBody);
         return res;
@@ -198,7 +191,6 @@ public class ApiBO {
 
         CreateCardInListResponse res = new CreateCardInListResponse();
         res.setStatusCode(createCardResponse.statusCode());
-        System.out.println(createCardResponse.body());
         TrelloCreateCard createCardBody = objectMapper.readValue(createCardResponse.body()+"", TrelloCreateCard.class);
         res.setBody(createCardBody);
         return res;
@@ -234,7 +226,6 @@ public class ApiBO {
 
         CreateBoardForLabelResponse res = new CreateBoardForLabelResponse();
         res.setStatusCode(createBoardForLabelResponse.statusCode());
-        System.out.println(createBoardForLabelResponse.body());
         TrelloCreateBoardForLabel createBoardForLabelBody = objectMapper.readValue(createBoardForLabelResponse.body()+"", TrelloCreateBoardForLabel.class);
         res.setBody(createBoardForLabelBody);
         return res;
@@ -257,7 +248,6 @@ public class ApiBO {
 
         CreateLabelForBoardResponse res = new CreateLabelForBoardResponse();
         res.setStatusCode(createLabelForBoardResponse.statusCode());
-        System.out.println(createLabelForBoardResponse.body());
         TrelloCreateLabelForBoard createLabelForBoardBody = objectMapper.readValue(createLabelForBoardResponse.body()+"", TrelloCreateLabelForBoard.class);
         res.setBody(createLabelForBoardBody);
         return res;

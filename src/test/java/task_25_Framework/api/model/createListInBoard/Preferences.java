@@ -1,5 +1,6 @@
 package task_25_Framework.api.model.createListInBoard;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.util.List;

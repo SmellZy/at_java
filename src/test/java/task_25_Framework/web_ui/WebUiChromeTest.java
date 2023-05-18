@@ -1,11 +1,9 @@
 package task_25_Framework.web_ui;
 
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import itstep.task_25_Framework.Singleton.WebDriverSingleton;
+import itstep.task_25_Framework.singleton.WebDriverSingleton;
 import itstep.task_25_Framework.bo.WebUiChromeBO;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

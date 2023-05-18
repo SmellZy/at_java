@@ -1,6 +1,5 @@
-package itstep.task_25_Framework.Singleton;
+package itstep.task_25_Framework.singleton;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

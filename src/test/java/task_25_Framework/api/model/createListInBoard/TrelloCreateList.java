@@ -1,5 +1,6 @@
 package task_25_Framework.api.model.createListInBoard;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
@@ -14,6 +15,7 @@ public class TrelloCreateList {
     private boolean pinned;
     private String url;
     private String shortUrl;
+    @JsonIgnore
     private Preferences prefs;
     private LabelNames labelNames;
     private Object limits;
